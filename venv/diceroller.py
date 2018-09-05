@@ -1,15 +1,19 @@
-import random
+import random, sys, os
+
+
+def clearScreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 runAgain = "Y"
 while runAgain == "Y":
+    clearScreen()
     diceNumber = int(input("How many dice would you like to roll? "))
     diceType = input("Which die would you like to roll? ")
     diceType = diceType.lower()
 
     while diceType == '':
         diceType = input("Please input the type of die you would like to roll: ")
-
-
 
     while diceNumber > 0:
 
@@ -29,7 +33,6 @@ while runAgain == "Y":
             print(random.randint(0, 4))
             diceNumber -= 1
 
-
         if diceType == 'd6':
             print(random.randint(0, 6))
             dicenumber -= 1
@@ -42,11 +45,9 @@ while runAgain == "Y":
             print(random.randint(0, 10))
             diceNumber -= 1
 
-
         if diceType == 'd12':
             print(random.randint(0, 12))
             diceNumber -= 1
-
 
         if diceType == 'd20':
             print(random.randint(0, 20))
@@ -58,6 +59,7 @@ while runAgain == "Y":
 
     if diceNumber == 0:
         runAgain = input("Would you like to roll again? [Y/N] ").upper()
+        clearScreen()
         if runAgain == "N":
             quit()
 
