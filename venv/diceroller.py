@@ -35,7 +35,7 @@ while runAgain == "Y":
 
         if diceType == 'd6':
             print(random.randint(0, 6))
-            dicenumber -= 1
+            diceNumber -= 1
 
         if diceType == 'd8':
             print(random.randint(0, 8))
